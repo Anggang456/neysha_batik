@@ -19,30 +19,27 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
                         @csrf
                         @method('PUT')
                         <div class="form-group">
-                            <label class="font-weight-bold">NIK</label>
+                            <label class="font-weight-bold">Jenis</label>
                             <input type="text" class="form-control" name="jenis" value="{{ old('jenis', $produk->jenis) }}">
                         </div>
                         <div class="form-group">
-                            <label class="font-weight-bold">Nama Lengkap</label>
+                            <label class="font-weight-bold">Nama</label>
                             <input name="nama" type="text" class="form-control" placeholder="Masukkan Nama" value="{{ old('nama', $produk->nama) }}">
                         </div>
                         <div class="form-group">
-                            <label class="font-weight-bold">Pekerjaan</label>
+                            <label class="font-weight-bold">Ukuran</label>
                             <input name="ukuran" type="text" class="form-control" placeholder="Masukkan Ukuran" value="{{ old('ukuran', $produk->ukuran) }}">
                         </div>
                         <div class="form-group">
-                            <label class="font-weight-bold">Jumlah Saudara</label>
+                            <label class="font-weight-bold">Jumlah Stok</label>
                             <input name="stok" type="text" class="form-control" placeholder="Masukkan Jumlah Stok" value="{{ old('stok', $produk->stok) }}">
                         </div>
                         <div class="form-group">
-                            <label class="font-weight-bold">Alamat</label>
+                            <label class="font-weight-bold">Harga</label>
                             <input name="harga" type="text" class="form-control" placeholder="Masukkan Jumlah Harga" value="{{ old('harga', $produk->harga) }}">
                         </div>
                         <div>
-                            <td>Gambar</td>
-                            @if($gambar)
-                            <img src="{{ asset('storage/'.$gambar) }}" class="img-thumbnail" style="width: 50%;">
-                            @endif
+                
                         </div>
                         <button type="submit" class="btn btn-md btn-primary">UPDATE</button>
                         <button type="reset" class="btn btn-md btn-warning">RESET</button>
