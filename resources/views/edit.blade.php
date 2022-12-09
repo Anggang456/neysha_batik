@@ -38,8 +38,15 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
                             <label class="font-weight-bold">Harga</label>
                             <input name="harga" type="text" class="form-control" placeholder="Masukkan Jumlah Harga" value="{{ old('harga', $produk->harga) }}">
                         </div>
-                        <div>
-                
+                        <div class="form-group">
+                            <label class="font-weight-bold">Gambar</label>
+                            <br>
+                            <tr>
+                                <td>
+                                <input type="file" name="gambar" id="gambar" class="form-control">
+                                <img src="{{ asset('gambar/'.$produk->gambar) }}" class="img-thumbnail" style="width: 50%;">
+                                </td>
+                            </tr>
                         </div>
                         <button type="submit" class="btn btn-md btn-primary">UPDATE</button>
                         <button type="reset" class="btn btn-md btn-warning">RESET</button>

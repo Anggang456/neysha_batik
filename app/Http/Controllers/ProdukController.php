@@ -14,36 +14,27 @@ class ProdukController extends Controller
         return view('create');
     }
     public function store(Request $request) {
-    if ($request->hasFile('gambar')) {
-        $path = $request->file('gambar')->store('images');
-    
-        $data = Produk::create([
-            'jenis' => $request->jenis,
-            'nama' => $request->nama,
-            'ukuran' => $request->ukuran,
-            'stok' => $request->stok,
-            'harga' => $request->harga,
-            'gambar' => $request->$path
-        ]);
-        return redirect()->route('produk.index',compact('data'))->with(['success' => 'Data Berhasil Disimpan!']);
-        } else {
-            $path = '';
-        }    
+        $data = Produk::create($request->all());
+        if($request->hasFile('gambar')) {
+            $request->file('gambar')->move('gambar/', $request->file('gambar')->getClientOriginalName());
+            $data->gambar = $request->file('gambar')->getClientOriginalName();
+            $data->save();
+        }
+
+        return redirect()->route('produk.index',compact('data'))->with(['success' => 'Data Berhasil Disimpan!']); 
     }
-    public function edit(Produk $produk) {
+    public function edit(Produk $produk, Request $request) {
         return view('edit', compact('produk'));
     }
-    public function update(Request $request, Produk $produk) {
-        $produk->update([
-        'jenis' => $request->jenis,
-        'nama' => $request->nama,
-        'ukuran' => $request->ukuran,
-        'stok' => $request->stok,
-        'harga' => $request->harga,
-        'gambar' => $request->gambar
-        ]);
+    public function update(Request $request, $id) {
+        $data = Produk::find($id);
+        $data->update($request->all());
+        if($request->hasFile('gambar')) {
+            $request->file('gambar')->move('gambar/', $request->file('gambar')->getClientOriginalName());
+            $data->gambar = $request->file('gambar')->getClientOriginalName();
+            $data->save();
         return redirect()->route('produk.index')->with(['success' => 'Data Berhasil Diubah!']);
-
+        }
     }
     public function destroy(Produk $produk) {
         $produk->delete();

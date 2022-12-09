@@ -40,7 +40,7 @@
                         <td>{{ $barang->ukuran ?? 'Ukuran Tidak Ditemukan' }} m</td>
                         <td>{{ $barang->stok ?? 'Jumlah Stok Tidak Ditemukan'}}</td>
                         <td>Rp {{ $barang->harga ?? 'Jumlah Harga Tidak Ditemukan'}}</td>
-                        <td><img src="{{ asset($barang->gambar) }}" width="50" height="50"></td> 
+                        <td><img src="{{ asset('gambar/'.$barang->gambar) }}" width= '50' height='50' class="img img-responsive" /></td>
                     <td>
                     <form action="{{ route('produk.destroy',$barang->id) }}"  method="Post">
                         <a class="btn btn-primary" href="{{ route('produk.edit',$barang->id) }}">Edit</a>
