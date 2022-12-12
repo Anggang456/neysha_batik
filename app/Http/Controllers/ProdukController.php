@@ -29,12 +29,8 @@ class ProdukController extends Controller
     public function update(Request $request, $id) {
         $data = Produk::find($id);
         $data->update($request->all());
-        if($request->hasFile('gambar')) {
-            $request->file('gambar')->move('gambar/', $request->file('gambar')->getClientOriginalName());
-            $data->gambar = $request->file('gambar')->getClientOriginalName();
-            $data->save();
         return redirect()->route('produk.index')->with(['success' => 'Data Berhasil Diubah!']);
-        }
+
     }
     public function destroy(Produk $produk) {
         $produk->delete();

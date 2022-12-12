@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
-                    <h2>Keysha Batik </h2>
+                    <h2>Neysha Batik </h2>
                 </div>
                     <div class="pull-right mb-2">
                         <a class="btn btn-success" href="{{ route('produk.create') }}"> Tambah Data</a>

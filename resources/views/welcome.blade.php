@@ -31,7 +31,7 @@
             <nav class="navbar navbar-expand-md navbar-light bg-green shadow-sm">
             <div class="container">
                 <a class="navbar-brand text-light" href="{{ url('/') }}">
-                    Keysha Batik
+                    Neysha Batik
                 </a>
             </div>
         </nav>

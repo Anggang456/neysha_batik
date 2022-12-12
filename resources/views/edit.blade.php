@@ -50,7 +50,7 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
                         </div>
                         <button type="submit" class="btn btn-md btn-primary">UPDATE</button>
                         <button type="reset" class="btn btn-md btn-warning">RESET</button>
-                        <button type="back" class="btn btn-md btn-danger " href="/produk">BACK</button>
+                        <button type="back" class="btn btn-md btn-danger" href="/produk">BACK</button>
                     </form>
                 </div>
             </div>

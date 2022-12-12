@@ -56,7 +56,11 @@
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dynamic.zacdn.com/KREZERl1z80woKoEThxqRaCNTuM=/fit-in/346x500/filters:quality(90):fill(ffffff)/https://static-id.zacdn.com/p/batik-parisya-8884-3904033-1.jpg" alt="..." /></div>
+                    <div class="col-md-6">
+                        @foreach($produk as $produk)
+                        <img class="card-img-top mb-5 mb-md-0" src="https://dynamic.zacdn.com/KREZERl1z80woKoEThxqRaCNTuM=/fit-in/346x500/filters:quality(90):fill(ffffff)/https://static-id.zacdn.com/p/batik-parisya-8884-3904033-1.jpg" alt="..." />
+                        @endforeach
+                    </div>
                     <div class="col-md-6">
                         <div class="small mb-1">SKU: BST-498</div>
                         <h1 class="display-5 fw-bolder">Baju Batik</h1>
@@ -187,41 +191,6 @@
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
         </footer>
         <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <script type="text/javascript">
-          // For example trigger on button clicked, or any time you need
-          var payButton = document.getElementById('pay-button');
-          payButton.addEventListener('click', function () {
-            // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
-            window.snap.pay('{{$snap_token}}', {
-              onSuccess: function(result){
-                /* You may add your own implementation here */
-                alert("payment success!"); console.log(result);
-                send_respone_to_form(result);
-              },
-              onPending: function(result){
-                /* You may add your own implementation here */
-                alert("wating your payment!"); console.log(result);
-                send_respone_to_form(result);
-              },
-              onError: function(result){
-                /* You may add your own implementation here */
-                alert("payment failed!"); console.log(result);
-                send_respone_to_form(result);
-              },
-              onClose: function(){
-                /* You may add your own implementation here */
-                alert('you closed the popup without finishing the payment');
-              }
-            })
-          });
-    
-          function send_respone_to_form(){
-          document.getElementById('json_callback').value = JSON.stringify(result);
-          $('#submit_form').submit();
-          }
-        </script>
+        
     </body>
 </html>

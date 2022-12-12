@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Produk;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +23,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $item = Produk::paginate('4');
+        $data = Produk::paginate('6');
+        return view('home', compact('data','item'));
+    }
+
+    public function cart() {
+        return view('cart');
     }
 }
