@@ -23,12 +23,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $item = Produk::paginate('4');
-        $data = Produk::paginate('6');
-        return view('home', compact('data','item'));
+        $data = Produk::all();
+        return view('home', compact('data'));
     }
-
-    public function cart() {
+    public function cart($id) {
+        //$data = Produk::where('id',$id)->first();
+        //$item = Produk::paginate('4');
         return view('cart');
     }
 }

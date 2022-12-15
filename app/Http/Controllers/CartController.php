@@ -6,9 +6,13 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index($id) {
         $data = Produk::where('id',$id)->first();
-        return view('cart', compact('data'));
-    
+        $item = Produk::paginate('4');
+        return view('cart', compact('data','item'));
     }
 }

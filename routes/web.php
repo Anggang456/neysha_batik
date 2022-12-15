@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controller\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +17,11 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::resource('produk', ProdukController::class);
-Route::resource('home', HomeController::class);
+
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
-
 
 Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('cart/{id}', [App\Http\Controllers\CartController::class, 'index']);

@@ -188,20 +188,9 @@
 	color: purple;
 	font-weight: 500;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.bg-green {
+	background-color: #78bf00;
+}
 .voutchers{
 	background-color: #fff;
 	border:none;
@@ -245,4 +234,47 @@
 	font-size: 14px;
 	position: relative;
 	bottom: 5px;
+}
+
+.text-uppercase {
+    text-transform: uppercase !important;
+}
+.bg-blue {
+    background-color: #78bf00 !important;
+    color: #FFF;
+}
+
+.product-ribbon {
+    position: absolute;
+    top: 15px
+}
+
+.product-ribbon.product-ribbon-left {
+    left: 15px
+}
+
+.product-ribbon.product-ribbon-right {
+    right: 15px
+}
+
+.product-ribbon.no-space {
+    top: 0
+}
+
+.product-ribbon.no-space.product-ribbon-left {
+    left: 0
+}
+
+.product-ribbon.no-space.product-ribbon-right {
+    right: 0
+}
+
+.product-ribbon.product-ribbon--style-1 {
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 48px;
+    font-size: 11px;
+    z-index: 10
 }
