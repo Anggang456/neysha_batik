@@ -9,8 +9,9 @@
                     <div class="col-md-6">
                         <h4>{{ $data->jenis }}</h4>
                         <h1 class="display-5 fw-bolder">{{ $data->nama }}</h1>
+                        <h6>ukuran {{ $data->ukuran }} cm</h6>
                         <div class="fs-5 mb-5">
-                            <span class="text-decoration-line-through">Rp {{ $data->harga }}</span>
+                            <span class="text-decoration-line-through">Rp. {{ number_format ($data->harga) }}</span>
                         </div>
                         <div class="d-flex">
                             <input class="form-control text-center me-3" id="inputQuantity" type="num" value="{{ $data->stok }}" style="max-width: 3rem" />
@@ -43,6 +44,7 @@
                                     <!-- Product name-->
                                     <h6 class="fw-bolder">{{ $data->jenis }}</h6>
                                     <h5 class="fw-bolder">{{ $data->nama }}</h5>
+                                    <p>Ukuran {{ $data->ukuran }} cm</p>
                                     <!-- Product reviews-->
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
@@ -52,7 +54,7 @@
                                         <div class="bi-star-fill"></div>
                                     </div>
                                     <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">Rp {{ $data->harga }}</span>
+                                    <span class="text-muted text-decoration-line-through">Rp. {{ number_format ($data->harga) }}</span>
                                 </div>
                             </div>
                             <!-- Product actions-->

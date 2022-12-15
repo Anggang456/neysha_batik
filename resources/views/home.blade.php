@@ -32,8 +32,10 @@
 							<!-- Product name-->
 							<p>{{ $data->jenis }}</p>
 							<h5 class="fw-bolder">{{ $data->nama }}</h5>
+							<p>Ukuran {{ $data->ukuran }} cm</p>
 							<!-- Product price-->
-							Rp {{ $data->harga }}
+							Rp. {{ number_format ($data->harga) }}
+							
 						</div>
 					</div>
 					<!-- Product actions-->
